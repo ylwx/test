@@ -21,6 +21,7 @@ namespace WebApplication3.Controllers
             //return "Hello World is old now. It’s time for wassup bro ;";
         }
 
+        //action
         public ActionResult getView()
         {
             EmployeeListViewModel EmployeeListViewModel = new EmployeeListViewModel();
