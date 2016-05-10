@@ -13,6 +13,6 @@ namespace WebApplication3.ViewModels
 
         public string SalaryColor { get; set; }
 
-        //public string UserName { get; set; }
+        public string UserName { get; set; }
     }
 }
