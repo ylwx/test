@@ -122,12 +122,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Bll\EmployeeBusinessLayer.cs" />
     <Compile Include="Bll\FirstNameValidation.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="DataAccessLayer\SalesERPDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\UserDetails.cs" />
     <Compile Include="ViewModels\CreateEmployeeViewModel.cs" />
     <Compile Include="ViewModels\EmployeeListViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
@@ -145,6 +147,7 @@
     <Content Include="Views\Employee\AddNew.cshtml" />
     <Content Include="Views\Employee\CreateEmployee.cshtml" />
     <Content Include="Views\Employee\Index04.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

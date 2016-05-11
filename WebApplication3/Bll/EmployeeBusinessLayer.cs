@@ -16,6 +16,18 @@ namespace WebApplication3.Bll
             return salesDal.Employees.ToList();
         }
 
+        public bool IsValidUser(UserDetails u)
+        {
+            if (u.UserName == "Admin" && u.Password == "Admin")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public Employee SaveEmployee(Employee e)
         {
             SalesERPDAL salesDal = new SalesERPDAL();
