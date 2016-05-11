@@ -14,18 +14,25 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public ActionResult DoLogin(UserDetails u)
         {
-            EmployeeBusinessLayer bal = new EmployeeBusinessLayer();
-
-            if (bal.IsValidUser(u))
+            if (ModelState.IsValid)
             {
-                FormsAuthentication.SetAuthCookie(u.UserName, false);  //存储username
+                EmployeeBusinessLayer bal = new EmployeeBusinessLayer();
 
-                return RedirectToAction("Index", "Employee");
+                if (bal.IsValidUser(u))
+                {
+                    FormsAuthentication.SetAuthCookie(u.UserName, false);  //存储username
+
+                    return RedirectToAction("Index", "Employee");
+                }
+                else
+                {
+                    ModelState.AddModelError("CredentialError", "Invalid Username or Password");
+
+                    return View("Login");
+                }
             }
             else
             {
-                ModelState.AddModelError("CredentialError", "Invalid Username or Password");
-
                 return View("Login");
             }
         }
@@ -41,6 +48,13 @@ namespace WebApplication3.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Login");
         }
     }
 }
